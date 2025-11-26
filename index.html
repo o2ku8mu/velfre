@@ -1,0 +1,653 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;ベルティと風のふもとの仲間たち | Fujinohara World&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FontAwesome --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fuji-base': '#fdfbf7',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fuji-text': '#4a4a4a',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fuji-accent': '#7189bf',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fuji-warm': '#e09f7d',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'fuji-green': '#a8c69f',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>fontFamily: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>sans: ['"Zen Maru Gothic"', 'sans-serif'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fdfbf7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #4a4a4a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Zen Maru Gothic', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom Scrollbar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar { width: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track { background: #f1f1f1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover { background: #aaa; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade-in {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.8s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(20px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(74, 74, 74, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* BIG FIVE Bar Chart Styles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #666;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: right;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-bar-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-grow: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f0f0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-center-line {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-bar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: width 0.6s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bigfive-value {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.7rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 1px 2px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="antialiased min-h-screen flex flex-col"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="w-full py-6 px-4 md:px-8 flex justify-between items-center bg-white/50 sticky top-0 z-30 shadow-sm backdrop-blur-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-3xl text-fuji-accent"&gt;&lt;i class="fa-solid fa-wind"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-xl md:text-2xl font-bold tracking-wide text-fuji-text"&gt;フジノハラ &lt;span class="text-sm font-normal ml-2 hidden sm:inline-block"&gt;ベルティと風のふもとの仲間たち&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="scrollToId('characters')" class="bg-fuji-warm text-white px-5 py-2 rounded-full text-sm hover:bg-opacity-90 transition shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>仲間に出会う</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="relative w-full py-24 px-6 text-center overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute inset-0 z-0 opacity-10 pointer-events-none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute top-10 left-10 text-9xl text-fuji-accent"&gt;&lt;i class="fa-solid fa-cloud"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute bottom-10 right-10 text-9xl text-fuji-warm"&gt;&lt;i class="fa-solid fa-mountain"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="relative z-10 max-w-4xl mx-auto space-y-8 fade-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-fuji-accent font-medium tracking-widest text-lg"&gt;“ちがい”が風を起こす物語&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl md:text-6xl font-bold !leading-[1.4] text-fuji-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>あなたの「弱さ」は、&lt;br&gt;誰かの「救い」になる。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg md:text-xl text-gray-600 leading-relaxed pt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>富士山のふもと、目には見えない風の国「フジノハラ」。&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>そこには、私たちの心が生み出す「感情の風」を循環させる&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>12人の精霊たちが暮らしています。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Worldview Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="world" class="w-full py-16 px-4 bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-5xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold text-fuji-text mb-2"&gt;&lt;i class="fa-solid fa-earth-asia mr-2 text-fuji-green"&gt;&lt;/i&gt;ふもとの国「フジノハラ」&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-500"&gt;懐かしくて奇妙な、風の生まれる場所&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-fuji-base p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl text-fuji-green mb-4"&gt;&lt;i class="fa-solid fa-tree"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="text-lg font-bold mb-3"&gt;忘れ物の森&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm leading-relaxed text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>苔むした巨大なポスト、湖に沈む観覧車。人間界で強い感情とともに手放されたモノたちが、自然と融合して風景になっています。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-fuji-base p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl text-fuji-accent mb-4"&gt;&lt;i class="fa-solid fa-utensils"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="text-lg font-bold mb-3"&gt;空気を食べる&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm leading-relaxed text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ベルフレたちの食事は「その場の空気」。ピリピリした空気は辛く、リラックスした空気は甘い。良い雰囲気を作ることは生きるために不可欠です。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-fuji-base p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl text-gray-400 mb-4"&gt;&lt;i class="fa-solid fa-ghost"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="text-lg font-bold mb-3"&gt;ナリカリと澱（おり）&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm leading-relaxed text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>感情を押し殺した時に生まれる黒い「澱」。それに飲み込まれた人間の成れの果てが「ナリカリ」。彼らの「異常な普通さ」が風を止めます。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Characters Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="characters" class="w-full py-16 px-4 bg-fuji-base"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-3xl font-bold text-fuji-text mb-4"&gt;12人のベルフレ（ゆーま族）&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 max-w-2xl mx-auto mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>彼らはあなたの心の化身。完璧じゃないけれど、愛おしい。&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>気になるキャラクターを選んで、心の形を覗いてみましょう。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-wrap justify-center gap-2 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="filterCharacters('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-gray-200 hover:bg-fuji-accent hover:text-white transition" data-filter="all"&gt;全員&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="filterCharacters('leader')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 hover:bg-fuji-accent hover:text-white transition" data-filter="leader"&gt;引っ張るタイプ&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="filterCharacters('support')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 hover:bg-fuji-accent hover:text-white transition" data-filter="support"&gt;支えるタイプ&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="filterCharacters('unique')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 hover:bg-fuji-accent hover:text-white transition" data-filter="unique"&gt;我が道を行くタイプ&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="filterCharacters('sensitive')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-gray-200 hover:bg-fuji-accent hover:text-white transition" data-filter="sensitive"&gt;繊細・慎重タイプ&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="character-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Javascript fills this --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer Note --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-gray-800 text-white py-6 text-center text-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="mb-2"&gt;&amp;copy; 2025 Fujinohara Project.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-gray-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fa-solid fa-circle-info mr-1"&gt;&lt;/i&gt; 画像が表示されない場合：&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>このHTMLファイルと画像ファイル（.png）を同じフォルダに保存してください。</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Character Detail Modal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="char-modal" class="fixed inset-0 z-50 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute inset-0 modal-overlay" onclick="closeModal()"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white rounded-3xl shadow-2xl w-full max-w-6xl h-[90vh] overflow-hidden pointer-events-auto flex flex-col md:flex-row relative"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fa-solid fa-xmark text-gray-600"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Left Column: Visuals &amp; Stats --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-full md:w-5/12 bg-fuji-base p-6 md:p-8 flex flex-col overflow-y-auto border-r border-gray-100"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="modal-icon-container" class="mb-4 inline-block relative w-32 h-32 mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;!-- JS injects Image here with fallback to Icon --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 id="modal-name" class="text-3xl font-bold text-fuji-text mb-1"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="modal-role" class="text-sm text-white bg-fuji-accent px-3 py-1 rounded-full shadow-sm inline-block mb-1"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- BIG FIVE BAR CHART --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm mb-6 border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between text-xs text-gray-400 font-bold mb-2 px-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;LOW (-50)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;BIG FIVE&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;HIGH (+50)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="bigfive-chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;!-- JS Generates Bars Here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- Vibe / Ecology --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;div class="flex items-center gap-2 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i class="fa-solid fa-leaf text-fuji-green"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="font-bold text-gray-700 text-sm"&gt;生態&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p id="modal-vibe" class="text-gray-600 text-sm leading-relaxed"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Right Column: Text Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-full md:w-7/12 p-6 md:p-10 overflow-y-auto bg-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Catchphrase --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 id="modal-catch" class="text-xl md:text-2xl font-bold text-fuji-warm leading-snug"&gt;&lt;/h3&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Story Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="fa-solid fa-book-open text-fuji-accent"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-gray-700"&gt;過去と転機&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p id="modal-past" class="text-gray-600 text-sm leading-loose bg-gray-50 p-5 rounded-xl border border-gray-100"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Mind Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-1 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-1/2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-2 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i class="fa-solid fa-star text-fuji-warm"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="font-bold text-gray-700 text-sm"&gt;ポリシー&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p id="modal-policy" class="text-gray-600 text-xs leading-relaxed"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="w-1/2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex items-center gap-2 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;i class="fa-solid fa-heart text-fuji-warm"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h4 class="font-bold text-gray-700 text-sm"&gt;動機&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p id="modal-motivation" class="text-gray-600 text-xs leading-relaxed"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Buddy Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="border-t border-gray-100 pt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-2 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="fa-solid fa-handshake-simple text-fuji-accent"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-gray-700"&gt;補い合う相棒&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div id="modal-buddies-container" class="grid grid-cols-1 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;!-- JS Populates 2 Buddies Here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript Logic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const characters = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 1, name: "ドラティ", animal: "ドラゴン", role: "市長", icon: "fa-dragon", image: "drati.png", type: "leader", color: "text-red-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: 41, E: 39, O: 39, A: 29, C: 39 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "完璧に見えて、実はプレッシャーと戦う優等生",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "幼い頃から「優等生」だったが、無理をして倒れた時にみんなが楽しそうにしているのを見て「自分は不要？」と孤独を感じた。復帰後、弱さを見せて頼ることで「完璧より信頼」が大切だと気づいた。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「“完璧”を目指すより、“最善”をみんなで選ぶ」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "一人ひとりが主役の街を作りたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "テッペン雲の上。翼があるのに飛ぶのが怖くて徒歩移動。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 11, desc: "常に高みを目指す自分とは正反対のパダティ。でも、彼の笹をもらう時だけは肩書きを捨ててリラックスできる。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 6, desc: "ドラティの掲げる大きな理想を、キリティが実務的な計画に落とし込んでくれる最高のビジネスパートナー。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 2, name: "ガオティ", animal: "ライオン", role: "アイドル", icon: "fa-sun", image: "gaoti.png", type: "sensitive", color: "text-orange-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -18, E: 27, O: 22, A: 30, C: 37 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "強がりだけど、夜は枕を濡らす繊細なパフォーマー",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "ネットの心ない言葉に傷つき引きこもった過去がある。しかしファンレターで「その涙に救われた」と言われ、自分の傷つきやすさは共感力という才能だと知った。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「涙の数だけ、優しさは強くなる」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "「泣いてもいいんだよ」と伝えられるステージを届けたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "ひだまり広場。落ち込むとタテガミがしぼんでただの猫になる。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 8, desc: "楽屋裏の弱い姿を見せられる数少ない相手。言葉なくそばにいてくれるシロティに充電させてもらっている。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 7, desc: "自分のファンであり、守ってくれる存在。トゲトゲの裏にある照れや愛情に、繊細なガオティだけが気づいている。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 3, name: "ワンティ", animal: "ゴールデンレトリバー", role: "郵便配達員", icon: "fa-dog", image: "wanti.png", type: "unique", color: "text-yellow-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: 39, E: 37, O: -12, A: 8, C: -1 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "根拠のない自信で、みんなの心を軽くする楽天家",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "誤配の大失敗をしたが、その先で老人を救ってしまった。「計画通りにいかないことが幸運を運ぶこともある」と開き直り、前進することを選んだ。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「寄り道こそが、本当の近道」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "計画通りにいかない人生を楽しむ姿を見せたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "カケッコ草原。配達員なのに地図が読めず、野生の勘で動く。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 4, desc: "ビバティは天敵だが、彼が責任感で潰れそうな時は無理やり散歩に連れ出す。「仕事より命！」という明るさが救い。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 1, desc: "ドラティの完璧な指示を聞き流すが、その適当さがドラティの緊張を解く鍵になっている。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 4, name: "ビバティ", animal: "ビーバー", role: "大工（現場監督）", icon: "fa-hammer", image: "bivati.png", type: "support", color: "text-brown-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: 31, E: -16, O: 13, A: 10, C: 34 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "頼まれたら断れない、限界突破のハードワーカー",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "断れずに仕事を抱え込み倒れ、逆に迷惑をかけた。「自分もメンテが必要なインフラの一部」と気づき、休む勇気を学んだ。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「良い仕事は、健やかな心と体から」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "無理している人に「帰ろう」と言える社会基盤を作りたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "セキトメ川のダム。立派なダムを作るが、自分の家はボロボロ。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 3, desc: "「また荷物届いてないよ！」と怒りつつ、彼の明るさに救われている。自分にはない「楽観性」を補ってもらう。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 11, desc: "「休むのも仕事」と諭してくれる師匠。パダティの宿で強制的に休まされるのがエネルギー源。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 5, name: "オムティ", animal: "オウム", role: "記者兼バイヤー", icon: "fa-crow", image: "omuti.png", type: "unique", color: "text-green-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -10, E: 36, O: 35, A: 22, C: -25 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "あっちこっち興味津々、器用貧乏なトレンドセッター",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "何をやっても中途半端だったが、無関係な知識を組み合わせたアイデアを絶賛され、「広く浅い知識」は点と点を繋ぐ武器だと自信を持った。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「飽きることは、次の扉を開けた証拠」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "バラバラなものを繋ぎ合わせ、新しい価値を生みたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "サワガシの森。記者なのにメモを取らず、熱量だけで喋る。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 9, desc: "記事を論破されるが、めげずにネタを持ち込む。堅い頭を柔らかくし、逆にアイデアを形にしてもらう関係。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 8, desc: "オムティが集めた雑多な本や資料を、シロティがアーカイブしてくれる。動のオムティと静のシロティ。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 6, name: "キリティ", animal: "キリン", role: "コンサルタント", icon: "fa-binoculars", image: "kiriti.png", type: "leader", color: "text-yellow-600",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -28, E: -26, O: 35, A: 14, C: -22 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "先読みしすぎて動けない、頭でっかちな哲学者",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "心配しすぎて遠足を中止させたら晴天になり非難された。しかし嵐の予兆に気づき街を救ったことで、臆病さは「高感度センサー」だと認めた。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「100の心配事は、1つの悲劇を防ぐ盾になる」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "最悪の未来を予測し、最高の回避ルートを提案したい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "ミワタシ台地。未来を見すぎて、現在の足元がお留守。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 10, desc: "天敵だが、動けない時に物理的に背中を蹴飛ばしてくれる唯一の存在。アクセルとブレーキの最強コンビ。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 1, desc: "ドラティの理想を実現可能な計画に変換する参謀役。ドラティが太陽なら、キリティはそれを支える大地。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 7, name: "ハリティ", animal: "ハリネズミ", role: "警備員", icon: "fa-shield-heart", image: "hariti.png", type: "sensitive", color: "text-gray-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -24, E: 25, O: -25, A: 8, C: -26 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "傷つきたくないからトゲを出す、本当は甘えん坊なツンデレ",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "裏切られた過去から心を閉ざしていたが、何度拒絶しても笑ってくれるガオティを見て、トゲがあっても愛されると知った。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「私の扉は重いけど、中は誰より暖かい」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "一度心を許した仲間は命がけで守り抜く。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "バラの茂み。警備員なのに人が来ると隠れてモニター越しに見る。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 2, desc: "密かな推し。ガオティを守るためなら体を張る。眩しくて直視できない。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 12, desc: "お互いに干渉しない距離感が心地よく、無言で一緒にお茶を飲む仲。言葉がいらない関係。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 8, name: "シロティ", animal: "シロクマ", role: "図書館司書", icon: "fa-book", image: "siroti.png", type: "support", color: "text-blue-300",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -23, E: -30, O: -15, A: 11, C: 26 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "殻にこもって黙々と。信頼度No.1の静かなる守護者",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "集団行動ができず悩んでいたが、孤独な作業で驚異的な集中力を発揮し、「孤独こそが才能を最大化する」と確信した。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「静けさは、言葉よりも多くを語る」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "見過ごされがちな真実や小さな声を静かに守りたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "コオリの洞窟。極寒なのに常に温かいお茶を入れている。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 5, desc: "騒がしいオムティは苦手だが、彼の持ってくる本には興味津々。閉じた世界に窓を開けてくれる存在。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 2, desc: "ガオティが疲れ果てて図書館の隅で寝ていると、黙って毛布をかけてあげるような、静かな信頼関係。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 9, name: "コンティ", animal: "キツネ", role: "裁判官", icon: "fa-scale-balanced", image: "konti.png", type: "leader", color: "text-purple-600",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: 27, E: -26, O: -25, A: -14, C: -15 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "群れずに我が道を行く、クールなリアリスト",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "正論を言って孤立したが、パニック時に冷静な指示で事態を収拾。「嫌われ役を買ってでも事実を見る力」が皆を守ると気づいた。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「感情は熱く、思考は冷たく」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "忖度や同調圧力のないクリアな世界を維持したい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "ツキアカリ湖畔。裁判官だが足元は裸足（地に足をつけるため）。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 5, desc: "適当な発言を許せず「ソースは？」と詰め寄るが、オムティの柔軟な発想には一目置いており、思考をほぐしてもらう。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 12, desc: "独自の美学を持つ者同士。論理的な自分と直感的なキャッティは、方法は違うが個を貫く同志。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 10, name: "シャッティ", animal: "シャチ", role: "レスキュー隊員", icon: "fa-water", image: "shati.png", type: "leader", color: "text-blue-700",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: 14, E: 9, O: 9, A: -41, C: 6 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "忖度なしの正論パンチ！迷いを断ち切る切り込み隊長",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "協調性がないと左遷されたが、同調圧力をぶち壊して皆の目を覚まさせた時、「空気を読まないのではなく変える力」だと自覚した。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「波風を立てない海に、船は進まない」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "停滞を打破し、先陣を切って戦いたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "アラナミの海。海の生き物なのに陸でも平気で活動する。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 6, desc: "「考えすぎだ！」と背中を蹴飛ばす相手。キリティが動けない時は必ず助けに行く。アクセルとブレーキ。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 9, desc: "論理で攻めるコンティと、直感で攻めるシャッティ。「嘘を許さない」点は共通しており、背中を預け合える。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 11, name: "パダティ", animal: "パンダ", role: "スパの主人", icon: "fa-spa", image: "padati.png", type: "unique", color: "text-gray-700",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -34, E: -36, O: -33, A: 6, C: -33 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "“あるがまま”の達人。競争社会から降りた自由人",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "競争社会で燃え尽き、竹林に逃げた。「何もしない」姿が癒やしになると言われ、競争から降りることで価値を見出した。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「生きているだけで、丸儲け」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "最高の「手抜き」と「休息」を提供したい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "ノンビリ竹林。客が来ても寝ていて、勝手に休んでいくシステム。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 4, desc: "常に忙しそうなビバティを見ると放っておけず、「お茶でも飲んでいきなよ」と引き留める。精神安定剤。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 1, desc: "ドラティが唯一、市長という肩書きを捨てて甘えられる場所を提供している。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: 12, name: "キャッティ", animal: "ねこ", role: "探偵兼芸術家", icon: "fa-cat", image: "cati.png", type: "unique", color: "text-indigo-500",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stats: { N: -21, E: -27, O: -34, A: -46, C: -33 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>catchphrase: "理解されなくてもいい。孤高を愛するミステリアス・アーティスト",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>past: "「宇宙人」扱いされ孤独だったが、常識外のひらめきで難事件を解決。「みんなと違う」ことは「鍵」を持っていることだと知った。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>policy: "「道がないなら、屋根を歩けばいい」",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motivation: "隙間の真実を見つけ、世界に風穴を開けたい。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vibe: "マヨイの路地裏。依頼を受けず、気になった謎だけ勝手に解く。",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddies: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 7, desc: "お互いに「一人が好き」なもの同士。近づきすぎず、遠くから存在を確認し合うような距離感が心地よい。" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ id: 9, desc: "キャッティの突飛な行動を、コンティだけが「なるほど、そういう理屈か」と面白がって分析してくれる理解者。" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Functions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderGrid(filterType = 'all') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const grid = document.getElementById('character-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filtered = filterType === 'all' ? characters : characters.filter(c =&gt; c.type === filterType);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>filtered.forEach(char =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.className = "bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition cursor-pointer border border-gray-100 flex flex-col items-center text-center group h-full";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.onclick = () =&gt; openModal(char.id);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Robust Image Fallback logic for Grid</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const iconHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative w-full h-full flex justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>src="${char.image}"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>alt="${char.name}"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>class="w-full h-full object-cover group-hover:scale-105 transition duration-500 absolute inset-0 z-10"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fa-solid ${char.icon} text-4xl ${char.color} group-hover:scale-110 transition duration-300 hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Logic for non-image fallbacks if needed, but here we always try image first if present</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-24 h-24 rounded-full bg-fuji-base flex items-center justify-center mb-4 overflow-hidden border-2 border-transparent group-hover:border-fuji-accent/30 transition duration-300 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${iconHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs font-bold text-gray-400 mb-1 uppercase tracking-wider"&gt;${char.role}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="text-xl font-bold text-fuji-text mb-2"&gt;${char.name}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-500 line-clamp-2"&gt;${char.catchphrase}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-auto pt-4 text-fuji-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>詳細を見る &lt;i class="fa-solid fa-arrow-right ml-1"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Filter Buttons Logic</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.filter-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(btn.dataset.filter === filterType) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('bg-fuji-accent', 'text-white');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('bg-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('bg-fuji-accent', 'text-white');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('bg-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderBigFiveChart(stats, colorClass) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('bigfive-chart-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const labels = { N: '情緒安定性', E: '外向性', O: '知的好奇心', A: '協調性', C: '勤勉性' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const colorMap = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'text-red-500': '#ef4444', 'text-orange-500': '#f97316', 'text-yellow-500': '#eab308',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'text-yellow-600': '#ca8a04', 'text-brown-500': '#a16207', 'text-green-500': '#22c55e',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'text-gray-500': '#6b7280', 'text-blue-300': '#93c5fd', 'text-purple-600': '#9333ea',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'text-blue-700': '#1d4ed8', 'text-gray-700': '#374151', 'text-indigo-500': '#6366f1'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let barColor = colorMap[colorClass] || '#7189bf';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (const [key, value] of Object.entries(stats)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const widthPercent = Math.abs(value);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const directionStyle = value &gt;= 0<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>? `left: 50%; width: ${widthPercent}%; border-radius: 0 4px 4px 0;`<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>: `right: 50%; width: ${widthPercent}%; border-radius: 4px 0 0 4px;`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const html = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bigfive-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bigfive-label"&gt;${labels[key]}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bigfive-bar-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bigfive-center-line"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bigfive-bar" style="${directionStyle} background-color: ${barColor};"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.innerHTML += html;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openModal(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const char = characters.find(c =&gt; c.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!char) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Robust Image Fallback logic for Modal Main Icon</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const modalIconContainer = document.getElementById('modal-icon-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>modalIconContainer.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative w-full h-full flex justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="${char.image}" alt="${char.name}"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-md mx-auto absolute inset-0 z-10"</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="fa-solid ${char.icon} text-7xl drop-shadow-sm inline-block ${char.color} hidden mt-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-name').innerText = char.name;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-role').innerText = char.role;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-catch').innerText = char.catchphrase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-past').innerText = char.past;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-policy').innerText = char.policy;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-motivation').innerText = char.motivation;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('modal-vibe').innerText = char.vibe;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderBigFiveChart(char.stats, char.color);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const buddyContainer = document.getElementById('modal-buddies-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>buddyContainer.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>char.buddies.forEach(b =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const partner = characters.find(c =&gt; c.id === b.id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.className = "flex items-start gap-4 p-4 bg-blue-50/50 rounded-xl cursor-pointer hover:bg-blue-50 transition border border-blue-50 items-center";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.onclick = () =&gt; openModal(partner.id);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Robust Image Fallback for Buddy Icons</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const buddyIconHtml = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative w-12 h-12 flex-shrink-0 flex justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;img src="${partner.image}"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>class="w-12 h-12 object-cover rounded-full border border-white absolute inset-0 z-10"</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;div class="text-2xl pt-1 ${partner.color} hidden"&gt;&lt;i class="fa-solid ${partner.icon}"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>div.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${buddyIconHtml}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h5 class="font-bold text-gray-800 text-sm mb-1"&gt;vs ${partner.name} &lt;span class="text-xs font-normal text-gray-400"&gt;(${partner.role})&lt;/span&gt;&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 text-xs leading-relaxed"&gt;${b.desc}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buddyContainer.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('char-modal').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'hidden';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('char-modal').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.style.overflow = 'auto';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function filterCharacters(type) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderGrid(type);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function scrollToId(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(id).scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('load', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderGrid();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
